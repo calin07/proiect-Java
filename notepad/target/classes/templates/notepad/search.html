@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Notepad</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+    body{
+        background:skyblue;
+        margin:0;
+        }
+    .menu{
+     width:100%;
+     background:#142b47;
+     overflow:auto;
+     }
+     .menu ul{
+     margin:0;
+     padding:0;
+     list-style:none;
+     line-height:60px;
+     }
+     .menu li{
+     float:left;
+     }
+     .menu ul li a {
+     background:#142b47;
+     text-decoration:none;
+     width:130px;
+     display:block;
+     text-align:center;
+     color:#f2f2f2;
+     font-size:18px;
+     font-family:sans-serif;
+     letter-spacing:0.5px;
+     }
+     .container-data
+{
+height: 100vh;
+display: flex;
+flex-wrap: wrap;
+padding: 30px;
+}
+.elem-container
+{
+    font-family: 'Poppins', sans-serif;
+    width: 300px;
+    height: 400px;
+    border: 1px solid blue;
+    margin: 20px;
+    background-color: #fbfb95;
+}
+.elem-title
+{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 10%;
+width: 100%;
+border-bottom: 1px solid gray;
+}
+.elem-content-elem
+{
+display: flex;
+justify-content: flex-start;
+align-items: flex-start;
+height: 65%;
+width: 100%;
+border-bottom: 1px solid gray;
+padding: 0px 10px;
+}
+
+.date-text
+{
+height: 10%;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+border-bottom: 1px solid gray;
+}
+
+.elem-utils-bar
+{
+    display: flex;
+    padding: 0px 10px;
+    justify-content: space-around;
+    align-items: center;
+    height: 15%;
+    width: 100%;
+    border-bottom: 1px solid gra
+}
+.elem-utils-bar button
+{
+    border-radius: 3px;
+    height: 35px;
+}
+button a
+{
+    text-decoration: none;
+}
+.search-form
+{
+    height: 100%;
+}
+.update-btn
+{
+    background-color: #00FF00;
+}
+.delete-btn
+{
+    background-color: red;
+    color: black;
+}
+.delete-btn a
+{
+    text-decoration: none;
+    color: black;
+}
+
+    </style>
+</head>
+<body>
+<nav class="menu">
+    <ul>
+<li><a th:href="@{/notepad/}">HOME</a></li>
+    </ul>
+</nav>
+<div class="container-data">
+<div th:each="notepad1:${notepad}" class="elem-container">
+    <div class="elem-title">
+        <span th:text="${notepad1.title}"></span>
+    </div>
+    <div class="elem-content-elem">
+        <span th:text="${notepad1.content}"></span>
+    </div>
+    <div class="date-text">
+        <span th:text="${time}"></span>
+    </div>
+</div>
+</div>
+</body>

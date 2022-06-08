@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>List of users</title>
+    <style>
+*{
+    box-sizing: border-box;
+    margin: 0;
+    pading: 0;
+    font-family: arial;
+}
+.main-container
+{
+    height: 100vh;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    color: white;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+.main-container form
+{
+<!--    height: 50%;-->
+    width: 30%;
+}
+.label-container
+{
+    height: 33%;
+    width: 100%;
+    padding: 20px;
+    display:flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content:flex-end;
+}
+.label-container input
+{
+    border-radius: 3px;
+    outline: nonece
+    border:none;
+    padding: 7px;
+}
+.label-container label
+{
+    margin-right: 15px;
+}
+.label-submit
+{
+    height: 33%;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items:center
+}
+.label-submit input
+{
+    background-color: green;
+    border:none;
+    color: white;
+    padding: 8px 25px;
+}
+</style>
+</head>
+<body>
+<div class="main-container">
+    <form th:action="@{/notepad/add/}" th:method="POST">
+        <div class="label-container">
+            <label for="text">Title</label>
+            <input id="text" th:name="text">
+        </div>
+        <div class="label-container">
+            <label for="content">Content</label>
+            <input id="content" th:name="content">
+        </div>
+        <div class="label-submit">
+            <input type="submit" value="ADD">
+        </div>
+    </form>
+</div>
+</body>
+</html>

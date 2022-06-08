@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>List of users</title>
+</head>
+<body>
+<a th:href="@{/users/add}">ADD</a>
+<table th:each="user:${users}">
+   <tr>
+       <td th:text="${user.name}"></td>
+       <td><a th:href="@{'/users/delete?param1=' + ${user.id}}">delete</a></td>
+   </tr>
+</table>
+</body>
+</html>
